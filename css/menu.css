@@ -1,0 +1,391 @@
+.today-special {
+  padding: 2.7rem 1.5rem 3rem;
+}
+.today-special .section-heading {
+  margin-bottom: 1.9rem;
+}
+.today-special .eyebrow {
+  text-transform: lowercase;
+}
+.special-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: center;
+  gap: clamp(1.2rem, 4vw, 4rem);
+  width: min(1250px, 100%);
+  margin: auto;
+}
+.special-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.special-card > img {
+  width: min(100%, 340px);
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+.special-copy {
+  width: 100%;
+}
+.special-copy h2 {
+  margin: 0.65rem 0 0.85rem;
+  font-size: clamp(1.35rem, 2.1vw, 1.8rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+.special-copy p {
+  max-width: 360px;
+  margin: 0 auto;
+  color: #3e3936;
+  font-size: 0.96rem;
+  line-height: 1.55;
+}
+.special-card-feature {
+  flex-direction: column;
+}
+.special-card-feature .special-copy h2 {
+  margin-top: 0;
+}
+.special-card-feature > img {
+  margin-top: 1rem;
+}
+.desktop-break {
+  display: none;
+}
+
+.full-menu {
+  padding: 3.6rem 1.5rem 4rem;
+  background: var(--cream);
+  text-align: center;
+}
+.full-menu .section-heading {
+  margin-bottom: 2.1rem;
+}
+.full-menu .section-heading h1 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 2.3vw, 1.9rem);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+.menu-tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(1.7rem, 5vw, 5rem);
+  margin: 0 auto 1.7rem;
+}
+.menu-tab {
+  position: relative;
+  padding: 0.25rem 0 0.4rem;
+  border: 0;
+  color: var(--copper-dark);
+  background: transparent;
+  font-weight: 700;
+  cursor: pointer;
+}
+.menu-tab::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  content: "";
+  background: transparent;
+}
+.menu-tab:hover,
+.menu-tab.is-active {
+  color: #292522;
+}
+.menu-tab.is-active::after {
+  background: #292522;
+}
+.menu-tab-panel {
+  display: grid;
+  grid-template-columns: minmax(220px, 300px) minmax(0, 780px);
+  align-items: start;
+  gap: clamp(2rem, 5vw, 5rem);
+  width: min(1120px, 100%);
+  margin: auto;
+  text-align: left;
+}
+.menu-tab-panel[hidden] {
+  display: none;
+}
+.menu-panel-image {
+  padding: 10px;
+  border: 1px solid #e2a982;
+}
+.menu-panel-image img {
+  width: 100%;
+  aspect-ratio: 1 / 1.08;
+  object-fit: cover;
+}
+.price-list {
+  display: grid;
+  gap: 1.05rem;
+  padding: 0.1rem 0 0;
+  margin: 0;
+  list-style: none;
+}
+.price-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  min-width: 0;
+  font-size: clamp(0.95rem, 1.3vw, 1.12rem);
+  line-height: 1.5;
+}
+.price-list li span:first-child {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  align-items: baseline;
+  gap: 0.35rem;
+}
+.price-list li span:first-child::after {
+  min-width: 1rem;
+  flex: 1;
+  border-bottom: 2px dotted #625d59;
+  content: "";
+  transform: translateY(-0.2em);
+}
+.price-list li span:last-child {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+.price-list-no-price li span:first-child::after {
+  display: none;
+}
+.price-list-no-price li span:last-child {
+  margin-left: auto;
+  color: #766c65;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+.menu-order {
+  margin-top: 2.7rem;
+}
+
+.coffee-promotion {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  width: min(1200px, calc(100% - 3rem));
+  min-height: 270px;
+  padding: 2rem 3.2rem;
+  margin: 4.2rem auto 4rem;
+  overflow: visible;
+  border: 1px solid #bc906f;
+  border-radius: 18px;
+  background-color: #fffdfa;
+  background-image:
+    radial-gradient(
+      ellipse at 20% 25%,
+      transparent 0 6px,
+      rgba(116, 76, 45, 0.07) 7px 8px,
+      transparent 9px
+    ),
+    radial-gradient(
+      ellipse at 80% 70%,
+      transparent 0 6px,
+      rgba(116, 76, 45, 0.07) 7px 8px,
+      transparent 9px
+    );
+  background-size: 44px 38px;
+}
+.coffee-promotion > img {
+  position: relative;
+  z-index: 1;
+  align-self: flex-end;
+  width: clamp(150px, 22vw, 265px);
+  max-height: 310px;
+  margin: -3.5rem 0 -2rem;
+  object-fit: contain;
+}
+.promotion-copy {
+  max-width: 650px;
+  text-align: right;
+}
+.promotion-title {
+  margin: 0;
+  color: var(--coffee);
+  font-size: clamp(2.2rem, 4.4vw, 4rem);
+  font-weight: 700;
+  line-height: 1;
+}
+.promotion-subtitle {
+  margin: 0.35rem 0 0.65rem;
+  color: var(--copper);
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
+  font-weight: 700;
+}
+.promotion-description {
+  max-width: 620px;
+  margin: 0;
+  font-size: clamp(1rem, 1.8vw, 1.45rem);
+  line-height: 1.4;
+}
+
+@media (min-width: 1050px) {
+  .special-card:first-child {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .special-card:first-child .special-copy p {
+    margin-left: 0;
+  }
+  .special-card:last-child {
+    align-items: flex-end;
+    text-align: right;
+  }
+  .special-card:last-child .special-copy p {
+    margin-right: 0;
+  }
+  .special-card-feature .special-copy h2 {
+    margin-top: 0.25rem;
+  }
+  .desktop-break {
+    display: block;
+  }
+}
+
+@media (max-width: 760px) {
+  .today-special {
+    padding: 1.55rem 15px 1.7rem;
+  }
+  .today-special .section-heading {
+    margin-bottom: 1.15rem;
+  }
+  .today-special .eyebrow {
+    margin-bottom: 0.6rem;
+    font-size: 1.35rem;
+  }
+  .special-grid {
+    grid-template-columns: 1fr;
+    gap: 1.55rem;
+    width: min(500px, 100%);
+  }
+  .special-card > img {
+    width: min(100%, 225px);
+  }
+  .special-copy h2 {
+    margin: 0.3rem 0 0.55rem;
+    font-size: 1.22rem;
+  }
+  .special-copy p {
+    max-width: 460px;
+    font-size: 0.9rem;
+    line-height: 1.45;
+  }
+  .special-card-feature > img {
+    margin-top: 0;
+  }
+  .special-card-feature > img {
+    order: -1;
+  }
+  .special-card-feature .special-copy h2 {
+    margin-top: 0.3rem;
+  }
+  .full-menu {
+    padding: 1.6rem 15px 1.8rem;
+  }
+  .full-menu .section-heading {
+    margin-bottom: 1.25rem;
+  }
+  .full-menu .section-heading h1 {
+    font-size: 1.25rem;
+  }
+  .menu-tabs {
+    gap: 1.15rem;
+    margin-bottom: 1.2rem;
+  }
+  .menu-tab {
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+  .menu-tab-panel {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+    width: 100%;
+  }
+  .menu-panel-image {
+    display: none;
+  }
+  .price-list {
+    gap: 0.62rem;
+  }
+  .price-list li {
+    gap: 0.25rem;
+    font-size: 0.85rem;
+    line-height: 1.45;
+  }
+  .price-list li span:first-child {
+    gap: 0.2rem;
+  }
+  .price-list li span:first-child::after {
+    min-width: 0.25rem;
+    border-bottom-width: 1px;
+  }
+  .price-list li span:last-child {
+    font-size: 0.82rem;
+  }
+  .price-list-no-price li span:last-child {
+    font-size: 0.75rem;
+  }
+  .menu-order {
+    min-height: 38px;
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+  }
+  .coffee-promotion {
+    width: calc(100% - 30px);
+    min-height: 0;
+    gap: 0.5rem;
+    padding: 1rem 0.8rem;
+    margin: 2rem auto 1.8rem;
+    border-radius: 14px;
+  }
+  .coffee-promotion > img {
+    align-self: center;
+    width: 33%;
+    max-height: 190px;
+    margin: -1.1rem 0 -0.8rem;
+  }
+  .promotion-copy {
+    flex: 1;
+  }
+  .promotion-title {
+    font-size: clamp(1.45rem, 6vw, 2.1rem);
+  }
+  .promotion-subtitle {
+    margin: 0.2rem 0 0.4rem;
+    font-size: 1.1rem;
+  }
+  .promotion-description {
+    font-size: 0.84rem;
+    line-height: 1.35;
+  }
+}
+
+@media (max-width: 380px) {
+  .menu-tabs {
+    gap: 0.75rem;
+  }
+  .menu-tab {
+    font-size: 0.8rem;
+  }
+  .price-list li {
+    font-size: 0.78rem;
+  }
+  .price-list li span:last-child {
+    font-size: 0.74rem;
+  }
+}

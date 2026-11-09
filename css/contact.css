@@ -1,0 +1,73 @@
+.contact-intro { padding: 3rem 1.5rem 2rem; }
+.contact-intro .section-heading { width: min(1050px, 100%); margin: 0 auto; }
+.contact-intro .eyebrow { margin-bottom: 1rem; }
+.contact-intro .section-heading > p:not(.eyebrow) { margin: 0 auto 1.65rem; font-size: 1rem; line-height: 1.6; }
+.contact-intro .button { min-height: 44px; }
+
+.contact-details-section { padding: 1.2rem 1.5rem 4rem; }
+.contact-details-inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, 400px); align-items: center; gap: clamp(3rem, 8vw, 7rem); width: min(870px, 100%); margin: auto; }
+.contact-details { display: grid; gap: 2.6rem; }
+.contact-detail h2 { margin: 0 0 .7rem; font-family: var(--font-heading); font-size: 1.55rem; font-weight: 500; letter-spacing: .06em; line-height: 1.3; text-transform: uppercase; }
+.contact-detail address, .contact-detail a, .contact-detail p { margin: 0; color: #36312e; font-size: .98rem; font-style: normal; line-height: 1.55; text-decoration: none; }
+.contact-detail a:hover { color: var(--copper-dark); text-decoration: underline; }
+.map-frame { padding: 12px; margin: 0; border: 1px solid #e4ad8b; }
+.map-frame img { width: 100%; height: auto; }
+
+.community-banner { margin: 0 0 3.5rem; color: #fff; background: var(--coffee); }
+.community-banner-inner { display: flex; align-items: center; justify-content: center; gap: clamp(2rem, 6vw, 6rem); width: min(1200px, calc(100% - 3rem)); min-height: 150px; margin: auto; }
+.community-banner-inner span { font-size: clamp(1.8rem, 3vw, 2.7rem); line-height: 1.2; }
+.community-banner-inner img { width: clamp(150px, 20vw, 230px); height: clamp(150px, 20vw, 230px); margin: -2.4rem 0; object-fit: contain; }
+
+.message-section { padding: 1rem 1.5rem 3.1rem; }
+.message-section .section-heading { width: min(1050px, 100%); margin-bottom: 2.5rem; }
+.message-section .eyebrow { margin-bottom: 1rem; }
+.message-section .section-heading > p:not(.eyebrow) { margin: 0 auto; font-size: 1rem; line-height: 1.6; }
+.contact-form { display: grid; gap: 1.6rem; width: min(1000px, 100%); margin: auto; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; }
+.form-field input, .form-field textarea { display: block; width: 100%; min-height: 54px; padding: .85rem 1rem; border: 1px solid #e2a17b; border-radius: 9px; color: var(--ink); background: #fff; outline-offset: 2px; }
+.form-field input::placeholder, .form-field textarea::placeholder { color: #6d6763; opacity: 1; }
+.form-field input:focus, .form-field textarea:focus { border-color: var(--copper-dark); outline: 2px solid rgba(203,128,83,.2); }
+.form-field textarea { min-height: 200px; resize: vertical; }
+.contact-form > .button { justify-self: center; min-height: 44px; margin-top: .15rem; cursor: pointer; }
+.contact-form-message { min-height: 1.4em; margin: -.9rem 0 0; color: var(--coffee); text-align: center; font-size: .9rem; }
+
+.social-section { padding: 1rem 1.5rem 3.3rem; text-align: center; }
+.social-section > h2 { margin: 0 0 2rem; font-family: var(--font-heading); font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 700; letter-spacing: .04em; line-height: 1.3; text-transform: uppercase; }
+.social-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.4rem 2rem; width: min(850px, 100%); margin: auto; }
+.social-profile { display: flex; flex-direction: column; align-items: center; gap: .45rem; color: var(--ink); font-size: clamp(1.2rem, 2vw, 1.65rem); text-decoration: none; }
+.social-profile i { display: inline-flex; width: 34px; height: 34px; align-items: center; justify-content: center; border-radius: 6px; color: #fff; background: var(--coffee); font-size: 1.25rem; }
+.social-profile:hover span { color: var(--copper-dark); text-decoration: underline; }
+
+@media (max-width: 700px) {
+  .contact-intro { padding: 1.5rem 15px .5rem; }
+  .contact-intro .eyebrow { margin-bottom: .8rem; font-size: 1.35rem; }
+  .contact-intro .section-heading > p:not(.eyebrow) { margin-bottom: .9rem; font-size: .83rem; line-height: 1.48; }
+  .contact-intro .button { min-height: 34px; padding: .4rem .8rem; font-size: .78rem; }
+  .contact-details-section { padding: .8rem 15px 1.5rem; }
+  .contact-details-inner { display: flex; flex-direction: column; align-items: stretch; gap: 1.5rem; }
+  .map-frame { order: -1; padding: 12px; }
+  .map-frame img { max-height: 320px; object-fit: contain; }
+  .contact-details { gap: 1.05rem; }
+  .contact-detail h2 { margin-bottom: .3rem; font-size: 1.2rem; }
+  .contact-detail address, .contact-detail a, .contact-detail p { font-size: .86rem; }
+  .community-banner { margin-bottom: 2.1rem; }
+  .community-banner-inner { position: relative; display: flex; flex-wrap: wrap; justify-content: flex-start; align-content: flex-start; gap: 0; width: 100%; min-height: 185px; padding: 1rem 15px; }
+  .community-banner-inner span { display: block; width: 100%; font-size: 1.35rem; line-height: 1.3; }
+  .community-banner-inner img { position: absolute; right: 1.1rem; bottom: .5rem; width: 130px; height: 130px; margin: 0; }
+  .message-section { padding: 0 15px 2rem; }
+  .message-section .section-heading { margin-bottom: 1.4rem; }
+  .message-section .eyebrow { max-width: 300px; margin: 0 auto .8rem; font-size: 1.3rem; line-height: 1.35; }
+  .message-section .eyebrow-line { width: 35px; flex-basis: 35px; }
+  .message-section .section-heading > p:not(.eyebrow) { font-size: .82rem; line-height: 1.45; }
+  .contact-form { gap: .8rem; }
+  .form-row { grid-template-columns: 1fr; gap: .8rem; }
+  .form-field input, .form-field textarea { min-height: 39px; padding: .55rem .7rem; border-radius: 8px; font-size: .82rem; }
+  .form-field textarea { min-height: 125px; }
+  .contact-form > .button { min-height: 34px; margin-top: .3rem; padding: .4rem .8rem; font-size: .78rem; }
+  .contact-form-message { font-size: .78rem; }
+  .social-section { padding: .4rem 15px 2rem; }
+  .social-section > h2 { margin-bottom: 1.2rem; font-size: 1.55rem; }
+  .social-grid { grid-template-columns: 1fr; gap: 1.1rem; }
+  .social-profile { gap: .2rem; font-size: 1rem; }
+  .social-profile i { width: 28px; height: 28px; font-size: 1rem; }
+}

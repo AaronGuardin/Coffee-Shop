@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta
+      name="description"
+      content="Coffee Shop — freshly brewed coffee, tea, desserts, and more."
+    />
+    <title>Coffee Shop | Taste Our Flavour</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/index.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="index.html" aria-label="Coffee Shop home">
+          <img
+            src="../images/navBarLogo.png"
+            width="100"
+            height="74"
+            alt="Coffee Shop"
+          />
+        </a>
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Open navigation"
+          aria-controls="primary-navigation"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+        <nav
+          class="primary-navigation"
+          id="primary-navigation"
+          aria-label="Main navigation"
+        >
+          <a class="current" href="index.html" aria-current="page">Home</a>
+          <a href="menu.html">Menu</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a class="button button-small nav-order" href="#menu">Order Now!</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <h1 id="hero-title">All We Need<br />Is <span>Coffee</span></h1>
+            <p>
+              We source, roast and blend our coffee with passion, we select our
+              tea with love...
+            </p>
+            <a class="button" href="#menu">Check Menu</a>
+          </div>
+          <img
+            class="hero-image"
+            src="../images/homePageImages/bg image.png"
+            alt="A heart-shaped latte beside roasted coffee beans"
+            fetchpriority="high"
+          />
+        </div>
+      </section>
+
+      <section
+        class="categories section-tint"
+        aria-labelledby="categories-title"
+      >
+        <div class="section-heading">
+          <p class="eyebrow" id="categories-title">
+            <span class="eyebrow-line" aria-hidden="true"></span><span class="eyebrow-label">categories</span><span class="eyebrow-line" aria-hidden="true"></span>
+          </p>
+          <h2>Fresh Taste Every Day</h2>
+          <p class="section-intro">
+            A charming neighbourhood restaurant and bar, located in the heart of
+            the city; a true gateway to gourmet farm-to-table dining, inspired
+            by seasonal produce and the province’s local suppliers.
+          </p>
+        </div>
+        <div class="category-grid">
+          <a class="category-card" href="menu.html#drinks"
+            ><img
+              src="../images/homePageImages/imagesForCategorySession/card2.png"
+              alt="Coffee"
+            /><span>Coffee</span></a
+          >
+          <a class="category-card" href="menu.html#drinks"
+            ><img
+              src="../images/homePageImages/imagesForCategorySession/card3.png"
+              alt="A cup of tea"
+            /><span>Tea</span></a
+          >
+          <a class="category-card" href="menu.html#drinks"
+            ><img
+              src="../images/homePageImages/imagesForCategorySession/card4.png"
+              alt="Strawberry smoothie"
+            /><span>Smoothies</span></a
+          >
+          <a class="category-card" href="menu.html#desserts"
+            ><img
+              src="../images/homePageImages/imagesForCategorySession/card5.png"
+              alt="Freshly baked croissant"
+            /><span>Pastries</span></a
+          >
+          <a class="category-card" href="menu.html#desserts"
+            ><img
+              src="../images/homePageImages/imagesForCategorySession/card1.png"
+              alt="Layered cake slice"
+            /><span>Cakes</span></a
+          >
+          <a class="category-card" href="menu.html#desserts"
+            ><img
+              src="../images/homePageImages/imagesForCategorySession/card6.png"
+              alt="Chocolate ice cream"
+            /><span>Desserts</span></a
+          >
+        </div>
+      </section>
+
+      <section class="menu-preview" id="menu" aria-labelledby="menu-title">
+        <div class="section-heading">
+          <p class="eyebrow" id="menu-title"><span class="eyebrow-line" aria-hidden="true"></span><span class="eyebrow-label">menu</span><span class="eyebrow-line" aria-hidden="true"></span></p>
+          <h2>Taste Our Flavour</h2>
+        </div>
+        <div class="menu-preview-inner">
+          <article class="menu-group drinks-group" id="drinks">
+            <div class="menu-image-frame">
+              <img
+                src="../images/homePageImages/imagesForMenuSession/coffeeImage.png"
+                alt="A cup of coffee topped with chocolate"
+                loading="lazy"
+              />
+            </div>
+            <div class="menu-list-wrap">
+              <h3 class="menu-label">Drinks</h3>
+              <ul class="menu-list">
+                <li><span>Matcha Latte</span><span>7500 MMK</span></li>
+                <li><span>Jasmine Green Tea</span><span>8000 MMK</span></li>
+                <li><span>Bang Bang Chocolate</span><span>6100 MMK</span></li>
+                <li>
+                  <span>Mango Tea with QQ Jelly</span><span>5500 MMK</span>
+                </li>
+                <li>
+                  <span>Iced Black Diamond Milk Tea</span><span>5500 MMK</span>
+                </li>
+                <li>
+                  <span>Regular Size Thai Pearl Milk Tea</span
+                  ><span>9500 MMK</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+          <article class="menu-group desserts-group" id="desserts">
+            <div class="menu-list-wrap">
+              <h3 class="menu-label">Desserts</h3>
+              <ul class="menu-list">
+                <li><span>Croissant</span><span>4500 MMK</span></li>
+                <li><span>Chiffon Cake</span><span>5500 MMK</span></li>
+                <li><span>Marble Cookie</span><span>6500 MMK</span></li>
+                <li><span>Chocolate Swiss Roll</span><span>9000 MMK</span></li>
+                <li><span>Blueberry Cake Slice</span><span>3500 MMK</span></li>
+                <li>
+                  <span>American Cheese Cake Slice</span><span>8000 MMK</span>
+                </li>
+              </ul>
+            </div>
+            <div class="menu-image-frame">
+              <img
+                src="../images/homePageImages/imagesForMenuSession/cakeImage.png"
+                alt="Assorted decorated mini cakes"
+                loading="lazy"
+              />
+            </div>
+          </article>
+        </div>
+        <a class="button see-more" href="menu.html">See More...</a>
+      </section>
+
+      <section class="coffee-banner" aria-label="Best delicious coffee bean">
+        <div class="coffee-banner-inner">
+          <span>Best Delicious</span>
+          <img
+            src="../images/homePageImages/imagesForAdsSession/upperViewTeaCup.png"
+            alt="A freshly brewed cup of black coffee"
+            loading="lazy"
+          />
+          <span>Coffee Bean</span>
+        </div>
+      </section>
+
+      <section class="ingredients" aria-labelledby="ingredients-title">
+        <div class="section-heading">
+          <p class="eyebrow" id="ingredients-title">
+            <span class="eyebrow-line" aria-hidden="true"></span><span class="eyebrow-label">ingredients</span><span class="eyebrow-line" aria-hidden="true"></span>
+          </p>
+          <h2>Made with Fresh, Organic Ingredients</h2>
+        </div>
+        <div class="ingredients-carousel swiper" aria-label="Our ingredients">
+          <div class="swiper-wrapper">
+            <div class="ingredient-slide swiper-slide">
+              <img
+                src="../images/homePageImages/imagesForIngredientSession/Ingredient1.png"
+                alt="Coffee beans"
+                loading="lazy"
+              />
+              <p>Coffee Beans</p>
+            </div>
+            <div class="ingredient-slide swiper-slide">
+              <img
+                src="../images/homePageImages/imagesForIngredientSession/Ingredient2.png"
+                alt="Tea leaves"
+                loading="lazy"
+              />
+              <p>Tea Leaves</p>
+            </div>
+            <div class="ingredient-slide swiper-slide">
+              <img
+                src="../images/homePageImages/imagesForIngredientSession/Ingredient3.png"
+                alt="Sugar"
+                loading="lazy"
+              />
+              <p>Sugar</p>
+            </div>
+            <div class="ingredient-slide swiper-slide">
+              <img
+                src="../images/homePageImages/imagesForIngredientSession/Ingredient4.png"
+                alt="Milk"
+                loading="lazy"
+              />
+              <p>Milk</p>
+            </div>
+            <div class="ingredient-slide swiper-slide">
+              <img
+                src="../images/homePageImages/imagesForIngredientSession/Ingredient5.png"
+                alt="Chocolate"
+                loading="lazy"
+              />
+              <p>Chocolate</p>
+            </div>
+            <div class="ingredient-slide swiper-slide">
+              <img
+                src="../images/homePageImages/imagesForIngredientSession/Ingredient6.png"
+                alt="Eggs"
+                loading="lazy"
+              />
+              <p>Eggs</p>
+            </div>
+          </div>
+          <button
+            class="ingredient-nav ingredient-prev"
+            type="button"
+            aria-label="Previous ingredients"
+          ></button>
+          <button
+            class="ingredient-nav ingredient-next"
+            type="button"
+            aria-label="Next ingredients"
+          ></button>
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-main">
+        <a class="footer-brand" href="index.html" aria-label="Coffee Shop home">
+          <img
+            src="../images/footerLogo.png"
+            width="150"
+            height="111"
+            alt="Coffee Shop — Taste Our Flavour"
+            loading="lazy"
+          />
+        </a>
+        <div class="footer-content">
+          <nav class="footer-navigation" aria-label="Footer navigation">
+            <a href="index.html">Home</a><a href="about.html">About</a
+            ><a href="menu.html">Menu</a><a href="contact.html">Contact</a>
+          </nav>
+          <div class="footer-bottom-row">
+            <form class="newsletter-form">
+              <label class="visually-hidden" for="newsletter-email"
+                >Email address</label
+              >
+              <input
+                id="newsletter-email"
+                name="email"
+                type="email"
+                placeholder="Enter your email here"
+                required
+              />
+              <button type="submit">Send</button>
+              <span
+                class="newsletter-message"
+                role="status"
+                aria-live="polite"
+              ></span>
+            </form>
+            <div class="social-links" aria-label="Social media">
+              <a href="https://www.facebook.com/" aria-label="Facebook"
+                ><i class="fa-brands fa-facebook-f" aria-hidden="true"></i
+              ></a>
+              <a href="https://www.instagram.com/" aria-label="Instagram"
+                ><i class="fa-brands fa-instagram" aria-hidden="true"></i
+              ></a>
+              <a href="https://x.com/" aria-label="X"
+                ><i class="fa-brands fa-x-twitter" aria-hidden="true"></i
+              ></a>
+              <a href="https://www.tiktok.com/" aria-label="TikTok"
+                ><i class="fa-brands fa-tiktok" aria-hidden="true"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">Copyright@2026 All Rights Reserved</div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="../js/script.js"></script>
+  </body>
+</html>
