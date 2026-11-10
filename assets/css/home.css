@@ -2,9 +2,9 @@
   position: relative;
   display: flex;
   align-items: center;
-  width: min(var(--content-width), calc(100% - 3rem));
+  width: 100%;
   min-height: 500px;
-  margin: auto;
+  padding-left: max(3rem, calc((100vw - var(--content-width)) / 2));
   overflow: hidden;
 }
 .hero-copy {
@@ -33,8 +33,8 @@
 .hero-image {
   position: absolute;
   top: 0;
-  right: max(-8vw, -110px);
-  width: 70%;
+  right: 0;
+  width: 78%;
   height: 100%;
   object-fit: contain;
   object-position: right center;
@@ -279,20 +279,34 @@
   cursor: pointer;
   transform: translateY(-50%);
 }
-.ingredient-prev { left: 0.8rem; }
-.ingredient-next { right: 0.8rem; }
+.ingredient-prev {
+  left: 0.8rem;
+}
+.ingredient-next {
+  right: 0.8rem;
+}
 .ingredient-nav::before {
   display: block;
   width: 14px;
   height: 18px;
   background: var(--copper);
   content: "";
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
 }
-.ingredient-prev::before { clip-path: polygon(100% 0, 100% 100%, 0 50%); }
-.ingredient-next::before { clip-path: polygon(0 0, 100% 50%, 0 100%); }
-.ingredient-nav:hover::before { background: var(--copper-dark); }
-.ingredient-nav:focus-visible { outline-offset: 1px; }
+.ingredient-prev::before {
+  clip-path: polygon(100% 0, 100% 100%, 0 50%);
+}
+.ingredient-next::before {
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+.ingredient-nav:hover::before {
+  background: var(--copper-dark);
+}
+.ingredient-nav:focus-visible {
+  outline-offset: 1px;
+}
 .ingredients-carousel .swiper-pagination {
   bottom: 0;
 }
@@ -372,10 +386,11 @@
   .hero-image {
     position: relative;
     right: auto;
-    width: calc(100% + 30px);
+    width: 100vw;
+    max-width: none;
     height: auto;
-    max-height: 205px;
-    margin: 0.6rem -15px 0;
+    max-height: none;
+    margin: 0.6rem 0 0 calc(50% - 50vw);
     object-fit: contain;
     object-position: center;
   }
