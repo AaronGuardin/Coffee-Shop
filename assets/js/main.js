@@ -1,35 +1,44 @@
 $(function () {
-  const $menuToggle = $(".menu-toggle");
-  const $navigation = $("#primary-navigation");
+  "use strict";
 
-  function closeNavigation() {
-    $menuToggle
-      .attr("aria-expanded", "false")
-      .attr("aria-label", "Open navigation");
-    $navigation.removeClass("is-open");
+  const $window = $(window);
+  const mobileNavigationQuery = window.matchMedia("(max-width: 700px)");
+
+  function setupNavigation() {
+    const $toggle = $(".menu-toggle");
+    const $navigation = $("#primary-navigation");
+
+    if (!$toggle.length || !$navigation.length) return;
+
+    function setNavigationOpen(isOpen) {
+      $toggle
+        .attr("aria-expanded", String(isOpen))
+        .attr("aria-label", isOpen ? "Close navigation" : "Open navigation");
+      $navigation.toggleClass("is-open", isOpen);
+    }
+
+    $toggle.on("click", function () {
+      setNavigationOpen($(this).attr("aria-expanded") !== "true");
+    });
+
+    $navigation.find("a").on("click", function () {
+      setNavigationOpen(false);
+    });
+
+    $(document).on("keydown", function (event) {
+      if (event.key === "Escape") setNavigationOpen(false);
+    });
+
+    $window.on("resize", function () {
+      if (!mobileNavigationQuery.matches) setNavigationOpen(false);
+    });
   }
 
-  $menuToggle.on("click", function () {
-    const isExpanded = $(this).attr("aria-expanded") === "true";
-    $(this)
-      .attr("aria-expanded", String(!isExpanded))
-      .attr("aria-label", isExpanded ? "Open navigation" : "Close navigation");
-    $navigation.toggleClass("is-open", !isExpanded);
-  });
+  function setupIngredientsCarousel() {
+    const carousel = document.querySelector(".ingredients-carousel");
+    if (!carousel || typeof Swiper === "undefined") return;
 
-  $navigation.find("a").on("click", closeNavigation);
-  $(document).on("keydown", function (event) {
-    if (event.key === "Escape") closeNavigation();
-  });
-  $(window).on("resize", function () {
-    if (window.matchMedia("(min-width: 701px)").matches) closeNavigation();
-  });
-
-  if (
-    document.querySelector(".ingredients-carousel") &&
-    typeof Swiper !== "undefined"
-  ) {
-    new Swiper(".ingredients-carousel", {
+    new Swiper(carousel, {
       slidesPerView: 1,
       spaceBetween: 24,
       loop: true,
@@ -48,51 +57,100 @@ $(function () {
     });
   }
 
-  $(".newsletter-form").on("submit", function (event) {
-    event.preventDefault();
-    const $form = $(this);
-    $form
-      .find(".newsletter-message")
-      .text("Newsletter signup is not connected yet.");
-  });
-});
+  function setupMenuTabs() {
+    const $tabs = $(".menu-tab");
+    if (!$tabs.length) return;
 
-$(function () {
-  const $menuTabs = $(".menu-tab");
-  $menuTabs.on("click", function () {
-    const $tab = $(this);
-    const panelId = $tab.attr("data-menu-tab");
+    function activateTab(tab) {
+      const $tab = $(tab);
+      const panelId = $tab.attr("data-menu-tab");
+      const panel = panelId && document.getElementById(panelId);
+      if (!panel) return;
 
-    $menuTabs
-      .removeClass("is-active")
-      .attr("aria-selected", "false")
-      .attr("tabindex", "-1");
-    $tab
-      .addClass("is-active")
-      .attr("aria-selected", "true")
-      .attr("tabindex", "0");
+      $tabs
+        .removeClass("is-active")
+        .attr({ "aria-selected": "false", tabindex: "-1" });
+      $tab
+        .addClass("is-active")
+        .attr({ "aria-selected": "true", tabindex: "0" });
 
-    $(".menu-tab-panel").attr("hidden", true);
-    $("#" + panelId).removeAttr("hidden");
-  });
+      $(".menu-tab-panel").attr("hidden", true);
+      $(panel).removeAttr("hidden");
+    }
 
-  $menuTabs.on("keydown", function (event) {
-    if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
-    event.preventDefault();
-    const currentIndex = $menuTabs.index(this);
-    const direction = event.key === "ArrowRight" ? 1 : -1;
-    const nextIndex =
-      (currentIndex + direction + $menuTabs.length) % $menuTabs.length;
-    $menuTabs.eq(nextIndex).trigger("click").trigger("focus");
-  });
-});
+    $tabs.on("click", function () {
+      activateTab(this);
+    });
 
-$(function () {
-  $(".contact-form").on("submit", function (event) {
-    event.preventDefault();
-    $(this)
-      .find(".contact-form-message")
-      .text("Thanks for reaching out. This contact form is not connected yet.");
-    this.reset();
-  });
+    $tabs.on("keydown", function (event) {
+      const keys = ["ArrowLeft", "ArrowRight", "Home", "End"];
+      if (!keys.includes(event.key)) return;
+      event.preventDefault();
+
+      const currentIndex = $tabs.index(this);
+      let nextIndex = currentIndex;
+      if (event.key === "ArrowRight") nextIndex = (currentIndex + 1) % $tabs.length;
+      if (event.key === "ArrowLeft") nextIndex = (currentIndex - 1 + $tabs.length) % $tabs.length;
+      if (event.key === "Home") nextIndex = 0;
+      if (event.key === "End") nextIndex = $tabs.length - 1;
+
+      const nextTab = $tabs.get(nextIndex);
+      activateTab(nextTab);
+      nextTab.focus();
+    });
+  }
+
+  function setupForms() {
+    $(".newsletter-form").on("submit", function (event) {
+      event.preventDefault();
+      $(this)
+        .find(".newsletter-message")
+        .text("Newsletter signup is not connected yet.");
+    });
+
+    $(".contact-form").on("submit", function (event) {
+      event.preventDefault();
+      $(this)
+        .find(".contact-form-message")
+        .text("Thanks for reaching out. This contact form is not connected yet.");
+      this.reset();
+    });
+  }
+
+  function setupScrollReveals() {
+    if (
+      !("IntersectionObserver" in window) ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) return;
+
+    const revealTargets = document.querySelectorAll(
+      ".site-header, .section-heading, .category-card, .menu-group, .coffee-banner-inner, .ingredient-slide, .special-card, .menu-tabs, .menu-tab-panel, .menu-order, .coffee-promotion, .team-intro, .team-section .chef-card, .history-inner, .timeline-item, .contact-detail, .map-frame, .community-banner-inner, .form-row, .contact-form > .form-field, .contact-form > .button, .social-section > h2, .social-profile, .footer-main, .copyright"
+    );
+    if (!revealTargets.length) return;
+
+    revealTargets.forEach((target, index) => {
+      target.setAttribute("data-reveal", "");
+      target.style.setProperty("--reveal-delay", `${(index % 6) * 70}ms`);
+    });
+    document.documentElement.classList.add("has-motion");
+
+    const observer = new IntersectionObserver(
+      (entries, revealObserver) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -36px 0px" }
+    );
+
+    revealTargets.forEach((target) => observer.observe(target));
+  }
+
+  setupNavigation();
+  setupIngredientsCarousel();
+  setupMenuTabs();
+  setupForms();
+  setupScrollReveals();
 });

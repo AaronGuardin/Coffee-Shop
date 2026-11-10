@@ -119,12 +119,10 @@
 }
 .menu-panel-image {
   padding: 10px;
-  border: 1px solid #e2a982;
 }
 .menu-panel-image img {
   width: 100%;
   aspect-ratio: 1 / 1.08;
-  object-fit: cover;
 }
 .price-list {
   display: grid;
